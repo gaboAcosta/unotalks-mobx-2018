@@ -1,11 +1,12 @@
 
 import React, { Component } from 'react'
 import ReactDom from 'react-dom'
+import LikesComponent from './src/components/LikesComponent'
 
 class App extends Component {
   render () {
     return (
-      <div>Hello world!</div>
+      <LikesComponent></LikesComponent>
     )
   }
 }
