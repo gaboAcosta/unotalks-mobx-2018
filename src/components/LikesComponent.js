@@ -1,22 +1,20 @@
 
 import React, { Component } from 'react'
+import { observer } from 'mobx-react'
+import LikesModel from './LikesModel'
 
+@observer
 export default class LikesComponent extends Component {
   constructor(props){
     super(props)
-    this.state = {
-      likes: 0
-    }
+    this.model = new LikesModel()
     this.like = this.like.bind(this)
   }
   like () {
-    const { state: { likes }} = this
-    this.setState({
-      likes: likes + 1
-    })
+    this.model.addLike()
   }
   render() {
-    const { state: { likes }} = this
+    const { likes } = this.model
     return (
       <div>
         <h3>This is the like counter component</h3>
